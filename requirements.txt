@@ -1,0 +1,9 @@
+django
+django-filter
+gunicorn
+psycopg2-binary
+django-environ
+celery
+django-celery-results
+django-celery-beat
+redis
