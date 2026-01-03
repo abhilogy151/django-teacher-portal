@@ -1,0 +1,6 @@
+/home/abhilogy/django-teacher-portal
+/home/abhilogy/django-teacher-portal/static
+
+add virtualenv path:
+-------------------
+create the venv and install lib manually using console then add that path.
