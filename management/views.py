@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Student
 from .filters import StudentFilter
-from .tasks import greet
+# from .tasks import greet
 
 
 from django.contrib.auth import get_user_model
@@ -30,11 +30,11 @@ def login_view(request):
                 messages.error(request, "Error! Username does not exist.")
                 return redirect('login')
 
-            print('----------- Login Start ------------') 
-            print(username)
-            print(password)
-            print(user)
-            print('------------ Login End -------------')
+            # print('----------- Login Start ------------') 
+            # print(username)
+            # print(password)
+            # print(user)
+            # print('------------ Login End -------------')
 
             user = authenticate(username=username, password=password)
 
@@ -61,22 +61,22 @@ def logout_view(request):
     messages.success(request, 'Success!, You have logged out.')
     return redirect('login')
 
-def celery_view(request):
-    print('-'*100)
-    try:
+# def celery_view(request):
+#     print('-'*100)
+#     try:
             
-        res = greet.delay()
-        print(res)
+#         res = greet.delay()
+#         print(res)
 
-        result = greet.delay()
-        print(result.id)          # UUID
-        print(result.status)      # e.g. PENDING, STARTED, SUCCESS, FAILURE
-        print(result.get())
-    except Exception as e:
-        print(e)
+#         result = greet.delay()
+#         print(result.id)          # UUID
+#         print(result.status)      # e.g. PENDING, STARTED, SUCCESS, FAILURE
+#         print(result.get())
+#     except Exception as e:
+#         print(e)
         
-    print('-'*100)
-    return HttpResponse('Success')
+#     print('-'*100)
+#     return HttpResponse('Success')
 
 # #--------------------------------------- category Start ------------------------
 @login_required(login_url='/')

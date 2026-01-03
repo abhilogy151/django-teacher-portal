@@ -33,8 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'management',
 
-    'django_celery_results',
-    'django_celery_beat',
+    # 'django_celery_results',
+    # 'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -71,24 +71,24 @@ WSGI_APPLICATION = 'teacher_portal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# Postgres db config from env Dev/Prod
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_DB'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Postgres db config from env Dev/Prod
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('POSTGRES_DB'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('POSTGRES_PORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -156,14 +156,14 @@ CELERY_RESULT_SERIALIZER = env("CELERY_RESULT_SERIALIZER", default="json")
 CELERY_TIMEZONE = env("CELERY_TIMEZONE", default="Asia/Kolkata")
 CELERY_ENABLE_UTC = env.bool("CELERY_ENABLE_UTC", default=False)
 
-print(f"*"*100)
-print(f"================: Print ENV Var :=================")
-print(f"DEBUG - {DEBUG}")
-print(f"NAME - {env('POSTGRES_DB')}")
-print(f"USER - {env('POSTGRES_USER')}")
-print(f"PASSWORD - {env('POSTGRES_PASSWORD')}")
-print(f"HOST - {env('POSTGRES_HOST')}")
-print(f"PORT - {env('POSTGRES_PORT')}")
-print(f"TIME_ZONE - {TIME_ZONE}")
-print(f"USE_TZ - {USE_TZ}")
-print(f"*"*100)
+# print(f"*"*100)
+# print(f"================: Print ENV Var :=================")
+# print(f"DEBUG - {DEBUG}")
+# print(f"NAME - {env('POSTGRES_DB')}")
+# print(f"USER - {env('POSTGRES_USER')}")
+# print(f"PASSWORD - {env('POSTGRES_PASSWORD')}")
+# print(f"HOST - {env('POSTGRES_HOST')}")
+# print(f"PORT - {env('POSTGRES_PORT')}")
+# print(f"TIME_ZONE - {TIME_ZONE}")
+# print(f"USE_TZ - {USE_TZ}")
+# print(f"*"*100)
